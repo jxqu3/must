@@ -1,7 +1,6 @@
 package must
 
 import (
-	"fmt"
 	"log"
 )
 
@@ -24,7 +23,7 @@ func MustFatal[T any](obj T, err error) T {
 // MustLog logs err if err is not nil
 func MustLog[T any](obj T, err error) T {
 	if err != nil {
-		fmt.Println("ERROR:", err)
+		log.Print("ERROR:", err)
 	}
 	return obj
 }
