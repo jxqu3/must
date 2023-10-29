@@ -4,26 +4,26 @@ import (
 	"log"
 )
 
-// Must panics if err is not nil
-func Must[T any](obj T, err error) T {
+// Panic panics if err is not nil
+func Panic[T any](obj T, err error) T {
 	if err != nil {
-		panic(err)
+		log.Panic(err)
 	}
 	return obj
 }
 
-// MustFatal log.Fatal err if err is not nil
-func MustFatal[T any](obj T, err error) T {
+// Fatal log.Fatal err if err is not nil
+func Fatal[T any](obj T, err error) T {
 	if err != nil {
 		log.Fatal(err)
 	}
 	return obj
 }
 
-// MustLog logs err if err is not nil
-func MustLog[T any](obj T, err error) T {
+// Log logs err if err is not nil
+func Log[T any](obj T, err error) T {
 	if err != nil {
-		log.Print("ERROR:", err)
+		log.Print("ERROR: ", err)
 	}
 	return obj
 }

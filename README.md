@@ -41,9 +41,9 @@ import (
 )
 
 func main() {
-	file := must.Must(os.Open("yourfile.txt")) // To panic
-	fileLog := must.MustLog(os.Open("yourfile.txt")) // To log.Print()
-	fileFatal := must.MustFatal(os.Open("yourfile.txt")) // To log.Fatal()
+	file := must.Panic(os.Open("yourfile.txt")) // To log.Panic() the error
+	fileLog := must.Log(os.Open("yourfile.txt")) // To log.Print() the error
+	fileFatal := must.Fatal(os.Open("yourfile.txt")) // To log.Fatal() the error
 	println(file.Name())
 }
 ```
