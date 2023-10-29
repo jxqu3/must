@@ -47,3 +47,7 @@ func main() {
 	println(file.Name())
 }
 ```
+
+## Get it
+Run `go get https://github.com/checkm4ted/must`
+import "github.com/checkm4ted/must" in your files
