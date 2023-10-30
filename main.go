@@ -41,14 +41,16 @@ func Log[T any](obj T, err error) T {
 	return obj
 }
 
-// C0 (Custom0) action, no return types, error only. uses the ErrorRule callback. SetErrorRule() sets that callback.
+// C0 (Custom0) action, no return types, error only. uses the ErrorRule callback. SetErrorRule() sets that callback. Defaults to
+// `log.Fatal("Error" + err)`
 func C0(err error) {
 	if err != nil {
 		ErrorRule(err)
 	}
 }
 
-// C (Custom) action, uses the ErrorRule callback. SetErrorRule() sets that callback.
+// C (Custom) action, uses the ErrorRule callback. SetErrorRule() sets that callback. Defaults to
+// `log.Fatal("Error" + err)`
 func C[T any](obj T, err error) T {
 	if err != nil {
 		ErrorRule(err)
@@ -56,7 +58,8 @@ func C[T any](obj T, err error) T {
 	return obj
 }
 
-// C2 (Custom2) action, with two return types. uses the ErrorRule callback. SetErrorRule() sets that callback.
+// C2 (Custom2) action, with two return types. uses the ErrorRule callback. SetErrorRule() sets that callback. Defaults to
+// `log.Fatal("Error" + err)`
 func C2[T, E any](obj T, obj2 E, err error) (T, E) {
 	if err != nil {
 		ErrorRule(err)
@@ -64,7 +67,8 @@ func C2[T, E any](obj T, obj2 E, err error) (T, E) {
 	return obj, obj2
 }
 
-// C3 (Custom3) action, with three return types. uses the ErrorRule callback. SetErrorRule() sets that callback.
+// C3 (Custom3) action, with three return types. uses the ErrorRule callback. SetErrorRule() sets that callback. Defaults to
+// `log.Fatal("Error" + err)`
 func C3[T, E, D any](obj T, obj2 E, obj3 D, err error) (T, E, D) {
 	if err != nil {
 		ErrorRule(err)
