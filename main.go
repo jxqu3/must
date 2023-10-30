@@ -7,7 +7,7 @@ import (
 // Panic panics if err is not nil
 func Panic[T any](obj T, err error) T {
 	if err != nil {
-		log.Panic(err)
+		log.Panic("ERROR: ", err)
 	}
 	return obj
 }
@@ -15,7 +15,7 @@ func Panic[T any](obj T, err error) T {
 // Fatal log.Fatal err if err is not nil
 func Fatal[T any](obj T, err error) T {
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("ERROR: ", err)
 	}
 	return obj
 }
