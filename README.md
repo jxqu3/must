@@ -15,15 +15,15 @@ import (
 func main() {
 	file, err := os.Open("yourfile.txt")
 	if err != nil {
-		panic(err)
+		panic("ERROR:", err)
 	}
 	fileLog, err := os.Open("yourfile.txt")
 	if err != nil {
-		fmt.Println("ERROR:", err)
+		log.Print("ERROR:", err)
 	}
 	fileFatal, err := os.Open("yourfile.txt")
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("ERROR:", err)
 
 	}
 	println(file.Name())
