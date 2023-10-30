@@ -54,6 +54,7 @@ func main() {
 	fileCustom := must.C(os.Open("yourfile.txt")) // To use the custom callback
 	fileCustom := must.C2(SomeFunctionWith2ReturnTypes("yourfile.txt"))
 	fileCustom := must.C3(SomeFunctionWith3ReturnTypes("yourfile.txt"))
+	must.C0(os.Chdir("dir")) // when you only want to handle the error and there are no return types (only returns an error)
 	println(file.Name())
 }
 ```

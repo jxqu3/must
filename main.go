@@ -41,6 +41,13 @@ func Log[T any](obj T, err error) T {
 	return obj
 }
 
+// C0 (Custom0) action, no return types, error only. uses the ErrorRule callback. SetErrorRule() sets that callback.
+func C0(err error) {
+	if err != nil {
+		ErrorRule(err)
+	}
+}
+
 // C (Custom) action, uses the ErrorRule callback. SetErrorRule() sets that callback.
 func C[T any](obj T, err error) T {
 	if err != nil {
