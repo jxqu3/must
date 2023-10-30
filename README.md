@@ -52,6 +52,8 @@ func main() {
     // Do some custom action here
   })
 	fileCustom := must.C(os.Open("yourfile.txt")) // To use the custom callback
+	fileCustom := must.C2(SomeFunctionWith2ReturnTypes("yourfile.txt"))
+	fileCustom := must.C3(SomeFunctionWith3ReturnTypes("yourfile.txt"))
 	println(file.Name())
 }
 ```
