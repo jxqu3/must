@@ -8,7 +8,7 @@ var ErrorRule func(error)
 
 func init() {
 	SetErrorRule(func(err error) {
-		log.Fatal("THIS IS THE DEFAULT ERRORRULE, USE SetErrorRule(handler)", err)
+		log.Fatal("ERROR: ", err)
 	})
 }
 
