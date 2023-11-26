@@ -51,9 +51,9 @@ func main() {
     must.SetErrorRule(func(err error) {
         // Do some custom action here
     })
-	fileCustom := must.C(os.Open("yourfile.txt")) // To use the custom callback
-	fileCustom := must.C2(SomeFunctionWith2ReturnTypes("yourfile.txt"))
-	fileCustom := must.C3(SomeFunctionWith3ReturnTypes("yourfile.txt"))
+	fileCustom := must.C(os.Open("yourfile.txt")) // To use the custom callback, handles err and returns T
+	fileCustom := must.C2(SomeFunctionWith2ReturnTypes("yourfile.txt")) // Handles err and return T, E
+	fileCustom := must.C3(SomeFunctionWith3ReturnTypes("yourfile.txt")) // Handles err and return T, E, D
 	must.C0(os.Chdir("dir")) // when you only want to handle the error and there are no return types (only returns an error)
 	println(file.Name())
 }
